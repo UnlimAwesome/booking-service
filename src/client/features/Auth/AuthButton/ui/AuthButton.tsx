@@ -7,7 +7,7 @@ export async function AuthButton() {
 	const user = await getUser();
 	return user ? (
 		<div className='flex items-center gap-4'>
-			Hey, {user.email}!
+			Привет, {user.email}!
 			<LogoutButton />
 		</div>
 	) : (
@@ -17,7 +17,7 @@ export async function AuthButton() {
 				size='sm'
 				variant={'outline'}
 			>
-				<Link href='/auth/login'>Войти</Link>
+				<Link href='/auth/sign-in'>Войти</Link>
 			</Button>
 			<Button
 				asChild

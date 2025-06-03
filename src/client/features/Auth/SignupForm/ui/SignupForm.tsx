@@ -44,7 +44,10 @@ export function SignupForm({
 				email,
 				password,
 				options: {
-					emailRedirectTo: `${window.location.origin}/protected`,
+					emailRedirectTo: `${window.location.origin}/hats`,
+					data: {
+						role: 'admin',
+					},
 				},
 			});
 			if (error) throw error;
@@ -121,14 +124,14 @@ export function SignupForm({
 								disabled={isLoading}
 							>
 								{isLoading
-									? 'Creating an account...'
-									: 'Sign up'}
+									? 'Создание аккаунта...'
+									: 'Зарегистрироваться'}
 							</Button>
 						</div>
 						<div className='mt-4 text-center text-sm'>
 							Уже есть аккаунт?{' '}
 							<Link
-								href='/auth/login'
+								href='/auth/sign-in'
 								className='underline underline-offset-4'
 							>
 								Войти
