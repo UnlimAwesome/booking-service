@@ -1,5 +1,6 @@
 'use client';
 
+import { Switch } from '@components/ui/switch';
 import { createClient } from '@/client/shared/lib/supabase/createClient';
 import { cn } from '@/client/shared/lib/utils';
 import { Button } from '@components/ui/button';
@@ -20,6 +21,7 @@ export function SignupForm({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<'div'>) {
+	const [role, setRole] = useState('customer');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [repeatPassword, setRepeatPassword] = useState('');
@@ -46,7 +48,7 @@ export function SignupForm({
 				options: {
 					emailRedirectTo: `${window.location.origin}/hats`,
 					data: {
-						role: 'admin',
+						role,
 					},
 				},
 			});
@@ -69,11 +71,24 @@ export function SignupForm({
 			<Card>
 				<CardHeader>
 					<CardTitle className='text-2xl'>Регистрация</CardTitle>
-					<CardDescription>Создайте аккаунт</CardDescription>
+					<CardDescription>Создайте аккаунт </CardDescription>
 				</CardHeader>
 				<CardContent>
 					<form onSubmit={handleSignUp}>
 						<div className='flex flex-col gap-6'>
+							<div className='flex items-center space-x-2'>
+								<Label htmlFor='airplane-mode'>
+									Пользователь
+								</Label>
+								<Switch
+									id='airplane-mode'
+									checked={role === 'admin'}
+									onCheckedChange={(checked) =>
+										setRole(checked ? 'admin' : 'customer')
+									}
+								/>
+								<Label htmlFor='airplane-mode'>Админ</Label>
+							</div>
 							<div className='grid gap-2'>
 								<Label htmlFor='email'>Email</Label>
 								<Input
