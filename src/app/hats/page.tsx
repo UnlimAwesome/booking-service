@@ -1,4 +1,4 @@
-import { HatCard } from '@/client/entities/Hat/Card/ui/Card';
+import { HatCard } from '@/client/widgets/HatCard/ui/Card';
 import { initSupabase } from '@/server/lib/supabase/init';
 
 export default async function Page() {

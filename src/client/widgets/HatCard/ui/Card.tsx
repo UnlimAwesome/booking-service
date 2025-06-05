@@ -1,6 +1,5 @@
 import { Database } from '@/server/lib/supabase/database.types';
-import { initSupabase } from '@/server/lib/supabase/init';
-import { Button } from '@components/ui/button';
+import { HatIcon } from '@components/HatIcon/HatIcon';
 import {
 	CardContent,
 	CardDescription,
@@ -9,16 +8,15 @@ import {
 	Card as CardPrimitive,
 	CardTitle,
 } from '@components/ui/card';
-import { DownloadButton } from './DownloadButton';
-import { HatIcon } from './HatIcon';
+import { DeleteButton } from '@features/hat/delete';
+import { DownloadButton } from '@features/hat/download';
+import { OrderButton } from '@features/hat/order';
+
 interface CardProps {
 	hat: Database['public']['Tables']['hat']['Row'];
 }
 
 export async function HatCard(props: CardProps) {
-	const supabase = await initSupabase();
-	const data = await supabase.auth.getSession();
-	console.log(data);
 	const { hat } = props;
 	return (
 		<CardPrimitive className='w-xs h-xs'>
@@ -26,8 +24,9 @@ export async function HatCard(props: CardProps) {
 				<CardTitle>
 					<div className='flex justify-between items-center'>
 						{hat.name}
-						<div>
+						<div className='flex gap-2'>
 							<DownloadButton hat={hat} />
+							<DeleteButton hatId={hat.id} />
 						</div>
 					</div>
 				</CardTitle>
@@ -37,7 +36,7 @@ export async function HatCard(props: CardProps) {
 				<HatIcon fill={hat.color} />
 			</CardContent>
 			<CardFooter className='flex-col gap-2'>
-				<Button className='w-full'>Купить за {hat.cost}$</Button>
+				<OrderButton hat={hat} />
 			</CardFooter>
 		</CardPrimitive>
 	);

@@ -1,5 +1,6 @@
 'use client';
 
+import { useUserStore } from '@/client/global/providers/UserStoreProvider';
 import { createClient } from '@/client/shared/lib/supabase/createClient';
 import { cn } from '@/client/shared/lib/utils';
 import { Button } from '@components/ui/button';
@@ -19,6 +20,7 @@ export function LoginForm({
 	const [error, setError] = useState<string | null>(null);
 	const [isLoading, setIsLoading] = useState(false);
 	const router = useRouter();
+	const { setUser } = useUserStore((state) => state);
 
 	const handleLogin = async (e: React.FormEvent) => {
 		e.preventDefault();
@@ -33,7 +35,9 @@ export function LoginForm({
 			});
 			if (error) throw error;
 			// Update this route to redirect to an authenticated route. The user already has an active session.
-			router.push('/hats');
+			setUser().then(() => {
+				router.push('/hats');
+			});
 		} catch (error: unknown) {
 			setError(
 				error instanceof Error ? error.message : 'An error occurred'

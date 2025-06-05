@@ -21,7 +21,9 @@
 		"paths": {
 			"@/*": ["./src/*"],
 			"@components/*": ["./src/client/shared/components/*"],
-			"@features/*": ["./src/client/features/*"]
+			"@features/*": ["./src/client/features/*"],
+			"@widgets/*": ["./src/client/shared/widgets/*"],
+			"@providers/*": ["./src/client/global/providers/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
