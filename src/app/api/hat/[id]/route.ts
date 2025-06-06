@@ -1,4 +1,4 @@
-import { hatController } from '@/server/controllers/hatController';
+import { hatController } from '@/server/controllers/hat';
 
 export async function DELETE(
 	request: Request,

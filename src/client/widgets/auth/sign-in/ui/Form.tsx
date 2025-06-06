@@ -11,7 +11,10 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ComponentPropsWithoutRef, useState } from 'react';
 
-export function Form({ className, ...props }: ComponentPropsWithoutRef<'div'>) {
+export function Form({
+	className,
+	...props
+}: ComponentPropsWithoutRef<'div'>) {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState<string | null>(null);
