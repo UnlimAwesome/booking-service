@@ -21,12 +21,11 @@ export default function Home() {
 				</div>
 			</nav>
 			<main className='flex flex-col size-full items-start justify-evenly py-10 p-4 md:p-28'>
-				{/* <div className='flex flex-col gap-8 h-full w-full'> */}
 				<h1
 					className={cn(
 						yesevaOne.className,
 						'bg-clip-text text-transparent bg-linear-[90deg,purple_0%,fuchsia_30%,HotPink_50%,sandybrown_70%,mediumorchid_90%,purple_100%]',
-						'md:text-9xl text-left animate-gradient-text bg-[200%,auto] text-7xl '
+						'md:text-9xl text-left animate-gradient-text bg-[200%,auto] text-7xl sm:text-8xl'
 					)}
 				>
 					КУПИ, МУЖИК
@@ -41,7 +40,6 @@ export default function Home() {
 				>
 					БУДЕТ КАК РАЗ
 				</h2>
-				{/* </div> */}
 				<Button
 					variant={'link'}
 					className={cn(
