@@ -13,7 +13,7 @@ export const Button = memo(function Button(props: { hatId: number }) {
 		<HasPermission permission={'hat.deleteOwn'}>
 			<ButtonPrimitive
 				variant={'destructive'}
-				size={'lg'}
+				size={'icon'}
 				onClick={async () => {
 					const { error } = await deleteHat(hatId);
 					if (!error) router.refresh();

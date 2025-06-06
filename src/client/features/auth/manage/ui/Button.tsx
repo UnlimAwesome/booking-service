@@ -7,7 +7,7 @@ export async function Button() {
 	const user = await getUser();
 	return user ? (
 		<div className='flex items-center gap-4'>
-			Привет, {user.email}!
+			<span className='text-sm md:text-lg'>Привет, {user.email}!</span>
 			<LogoutButton />
 		</div>
 	) : (

@@ -19,7 +19,7 @@ interface CardProps {
 export async function HatCard(props: CardProps) {
 	const { hat } = props;
 	return (
-		<CardPrimitive className='w-xs h-xs'>
+		<CardPrimitive className='w-xs aspect-square justify-self-center'>
 			<CardHeader>
 				<CardTitle>
 					<div className='flex justify-between items-center'>

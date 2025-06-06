@@ -15,7 +15,7 @@ export const Button = memo(function Button(props: DownloadButtonProps) {
 	return (
 		<ButtonPrimitive
 			variant={'secondary'}
-			size={'lg'}
+			size={'icon'}
 			onClick={async () => {
 				const pdfBytes = await createPDF(JSON.stringify(hat, null, 2));
 				const blob = new Blob([pdfBytes], {

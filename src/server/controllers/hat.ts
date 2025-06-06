@@ -10,12 +10,11 @@ class HatController {
 		return { data, error };
 	}
 
-	//TODO: connect with ui
-	async createHat(name: string) {
+	async createHat(hat: { name: string, color: string, size: string, cost: number }) {
 		const supabase = await initSupabase();
 		const { data, error } = await supabase
 			.from('hat')
-			.insert({ name: name });
+			.insert(hat);
 		return { data, error };
 	}
 }
