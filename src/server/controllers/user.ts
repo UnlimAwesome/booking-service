@@ -7,11 +7,13 @@ class UserController {
 		const {
 			data: { user },
 		} = await supabase.auth.getUser();
+
 		const { data } = await supabase
 			.from('user_roles')
 			.select('*')
 			.eq('user_id', user?.id);
 		if (!data) return;
+		
 		const { user_id: userId, role: userRole } =
 			data[0] as Database['public']['Tables']['user_roles']['Row'];
 		const { data: userPermissionsRows } = await supabase
