@@ -22,7 +22,7 @@
 			"@/*": ["./src/*"],
 			"@components/*": ["./src/client/shared/components/*"],
 			"@features/*": ["./src/client/features/*"],
-			"@widgets/*": ["./src/client/shared/widgets/*"],
+			"@widgets/*": ["./src/client/widgets/*"],
 			"@providers/*": ["./src/client/global/providers/*"]
 		}
 	},

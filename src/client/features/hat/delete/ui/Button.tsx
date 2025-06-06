@@ -4,7 +4,7 @@ import { Trash } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { memo } from 'react';
 import { deleteHat } from '../api/delete';
-import { HasPermission } from '@/client/shared/components/HasPermission/HasPermission';
+import { HasPermission } from '@components/HasPermission/HasPermission';
 
 export const Button = memo(function Button(props: { hatId: number }) {
 	const { hatId } = props;

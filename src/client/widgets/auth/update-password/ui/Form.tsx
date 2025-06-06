@@ -15,7 +15,7 @@ import { Label } from '@components/ui/label';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-export function UpdatePasswordForm({
+export function Form({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<'div'>) {

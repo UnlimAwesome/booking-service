@@ -1,4 +1,4 @@
-import { ForgotPasswordForm } from '@/client/features/Auth/ForgotPasswordForm/ForgotPasswordForm';
+import { ForgotPasswordForm } from "@widgets/auth/forgot-password";
 
 export default function Page() {
 	return (

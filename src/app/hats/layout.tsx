@@ -1,5 +1,5 @@
-import { AuthButton } from '@/client/features/Auth/AuthButton/ui/AuthButton';
-import { ThemeSwitcher } from '@/client/shared/components/ThemeSwitcher/ThemeSwitcher';
+import { AuthButton } from '@features/auth/manage';
+import { ThemeSwitcher } from '@components/ThemeSwitcher/ThemeSwitcher';
 import { cn } from '@/client/shared/lib/utils';
 
 export default function Layout({ children }: { children: React.ReactNode }) {

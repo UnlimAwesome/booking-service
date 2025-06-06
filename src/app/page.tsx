@@ -1,7 +1,7 @@
-import { AuthButton } from '@/client/features/Auth/AuthButton/ui/AuthButton';
-import { ThemeSwitcher } from '@/client/shared/components/ThemeSwitcher/ThemeSwitcher';
-import { Button } from '@/client/shared/components/ui/button';
 import { cn } from '@/client/shared/lib/utils';
+import { ThemeSwitcher } from '@components/ThemeSwitcher/ThemeSwitcher';
+import { Button } from '@components/ui/button';
+import { AuthButton } from '@features/auth/manage';
 import { Yeseva_One } from 'next/font/google';
 import Link from 'next/link';
 

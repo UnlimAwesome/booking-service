@@ -17,7 +17,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-export function SignupForm({
+export function Form({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<'div'>) {

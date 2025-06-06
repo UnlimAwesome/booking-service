@@ -1,9 +1,9 @@
-import { Button } from '@components/ui/button';
+import { Button as ButtonPrimitive } from '@components/ui/button';
 import Link from 'next/link';
-import { LogoutButton } from './../../LogoutButton/ui/LogoutButton';
 import { getUser } from '@/client/entities/User/api/getUser';
+import { LogoutButton } from '../../logout';
 
-export async function AuthButton() {
+export async function Button() {
 	const user = await getUser();
 	return user ? (
 		<div className='flex items-center gap-4'>
@@ -12,20 +12,20 @@ export async function AuthButton() {
 		</div>
 	) : (
 		<div className='flex gap-2'>
-			<Button
+			<ButtonPrimitive
 				asChild
 				size='sm'
 				variant={'outline'}
 			>
 				<Link href='/auth/sign-in'>Войти</Link>
-			</Button>
-			<Button
+			</ButtonPrimitive>
+			<ButtonPrimitive
 				asChild
 				size='sm'
 				variant={'default'}
 			>
 				<Link href='/auth/sign-up'>Зарегистрироваться</Link>
-			</Button>
+			</ButtonPrimitive>
 		</div>
 	);
 }

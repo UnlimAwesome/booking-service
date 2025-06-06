@@ -1,4 +1,4 @@
-import { UpdatePasswordForm } from '@/client/features/Auth/UpdatePasswordForm/UpdatePasswordForm';
+import { UpdatePasswordForm } from '@widgets/auth/update-password';
 
 export default function Page() {
 	return (

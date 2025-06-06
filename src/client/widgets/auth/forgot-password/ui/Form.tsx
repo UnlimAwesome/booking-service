@@ -14,7 +14,7 @@ import { Label } from '@components/ui/label';
 import Link from 'next/link';
 import { useState } from 'react';
 
-export function ForgotPasswordForm({
+export function Form({
 	className,
 	...props
 }: React.ComponentPropsWithoutRef<'div'>) {
@@ -54,28 +54,26 @@ export function ForgotPasswordForm({
 				<Card>
 					<CardHeader>
 						<CardTitle className='text-2xl'>
-							Check Your Email
+							Проверьте вашу почту
 						</CardTitle>
 						<CardDescription>
-							Password reset instructions sent
+							Инструкции по сбросу пароля отправлены
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
 						<p className='text-sm text-muted-foreground'>
-							If you registered using your email and password, you
-							will receive a password reset email.
+							Если вы зарегистрировались с помощью email и пароля,
+							вы получите письмо для сброса пароля.
 						</p>
 					</CardContent>
 				</Card>
 			) : (
 				<Card>
 					<CardHeader>
-						<CardTitle className='text-2xl'>
-							Reset Your Password
-						</CardTitle>
+						<CardTitle className='text-2xl'>Сброс пароля</CardTitle>
 						<CardDescription>
-							Type in your email and we&apos;ll send you a link to
-							reset your password
+							Введите ваш email и мы отправим вам ссылку для
+							сброса пароля
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
@@ -105,17 +103,17 @@ export function ForgotPasswordForm({
 									disabled={isLoading}
 								>
 									{isLoading
-										? 'Sending...'
-										: 'Send reset email'}
+										? 'Отправка...'
+										: 'Восстановить пароль'}
 								</Button>
 							</div>
 							<div className='mt-4 text-center text-sm'>
-								Already have an account?{' '}
+								Уже есть аккаунт?{' '}
 								<Link
-									href='/auth/login'
+									href='/auth/sign-in'
 									className='underline underline-offset-4'
 								>
-									Login
+									Войти
 								</Link>
 							</div>
 						</form>
